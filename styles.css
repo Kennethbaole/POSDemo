@@ -79,7 +79,7 @@ body, html {
     cursor: pointer;
 }
 .mini-navbar-memberships .memberships-navbar-button.active {
-    border-bottom: 3px solid #BCA2e7; /* Add a bar under the active button */
+    border-bottom: 3px solid #BCA2e7; 
 }
 .mini-navbar-memberships .memberships-navbar-button:hover {
     color: #BCA2e7;
