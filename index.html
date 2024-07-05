@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="navbar"> <!-- Navbar that holds the main tabs -->
+            <div class="logo-container">
+                <i class="fas fa-cash-register"></i>
+                <h3>Dragon - POS</h3>
+            </div>
+            <a href="#checkIn" onclick="showTab('checkIn', this)">Check In</a>
+            <a href="#checkOut" onclick="showTab('checkOut', this)">Check Out</a>
+            <a href="#memberships" onclick="showTab('memberships', this)">Memberships</a>
+            <a href="#rewards" onclick="showTab('rewards', this)">Rewards</a>
+            <a href="#serviceRating" onclick="showTab('serviceRating', this)">Service Ratings</a>
+            <a href="#surveys" onclick="showTab('surveys', this)">Surveys</a>
+            <a href="#giftcards" onclick="showTab('giftcards', this)">Gift Cards</a>
+            <a href="#payroll" onclick="showTab('payroll', this)">Payroll</a>
+            <a href="#booking" onclick="showTab('booking', this)">Booking</a>
+            <a href="#turnsManagement" onclick="showTab('turnsManagement', this)">Turns Management</a>
+        </header>
+    </div>
+
+    <div id="memberships" class="tab-content"> <!-- Creating a container for Memberships -->
+        <div class="mini-navbar-memberships">
+            <div class="memberships-heading">Memberships</div>
+            <div class="links">
+                <button class="memberships-navbar-button" onclick="showMembershipContent('membersList', this)">Members List</button>
+                <button class="memberships-navbar-button" onclick="showMembershipContent('addNewMember', this)">Add New Member</button>
+                <button class="memberships-navbar-button" onclick="showMembershipContent('membershipPlans', this)">Membership Plans</button>
+                <button class="memberships-navbar-button" onclick="showMembershipContent('discountsAndPromotions', this)">Discount and Promotions</button>
+            </div>
+        </div>
+        <div id="membersList" class="sub-tab-content">
+            <i class="fa-solid fa-users"></i> Members
+            <h2>Members List</h2>
+            <input type="text" id="searchMembers" placeholder="Search Members...">
+            <div id="membersCardsContainer"></div>
+        </div>
+        <div id="addNewMember" class="sub-tab-content form-container">
+            <i class="fa-solid fa-plus"></i> <h2>Add New Member</h2>
+            <form id="addMemberForm" class="formCard">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="dateOfBirth">Date of Birth:</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="membershipType">Membership Type:</label>
+                <select id="membershipType" name="membershipType" required>
+                    <option value="basic">Basic</option>
+                    <option value="premium">Premium</option>
+                    <option value="VIP">VIP</option>
+                </select>
+                <label for="payment">Payment Details:</label>
+                <input type="text" id="payment" name="payment" required>
+                <button type="submit">Add Member</button>
+            </form>
+        </div>
+        <div id="membershipPlans" class="sub-tab-content">
+            <h2>Membership Plans</h2>
+            <div class="plan-cards-container"> <!-- Container for the plan cards -->
+                <div class="planCard basicPlanCard" id="basicPlan">
+                    <div class="planHeaderBasic">
+                        <p class="price">$15</p>
+                        <p class="period">PER MONTH</p>
+                    </div>
+                    <div class="planContent">
+                        <h3>Basic</h3>
+                        <ul class="benefits">
+                            <li>Placeholder text</li>
+                            <li>Placeholder text</li>
+                            <li>Placeholder text</li>
+                            <li>Placeholder text</li>
+                        </ul>
+                    </div>
+                    <button class="editButton" onclick="editPlan('basicPlan')">Edit</button>
+                </div>
+                <div class="planCard premiumPlanCard" id="premiumPlan">
+                    <div class="planHeaderPremium">
+                        <p class="price">$25</p>
+                        <p class="period">PER MONTH</p>
+                    </div>
+                    <div class="planContent">
+                        <h3>Premium</h3>
+                        <ul class="benefits">
+                            <li>Placeholder text</li>
+                            <li>Placeholder text</li>
+                            <li>Placeholder text</li>
+                            <li>Placeholder text</li>
+                        </ul>
+                    </div>
+                    <button class="editButton" onclick="editPlan('premiumPlan')">Edit</button>
+                </div>
+                <div class="planCard VIPPlanCard" id="VIPPlan">
+                    <div class="planHeaderVIP">
+                        <p class="price">$35</p>
+                        <p class="period">PER MONTH</p>
+                    </div>
+                    <div class="planContent">
+                        <h3>VIP</h3>
+                        <ul class="benefits">
+                            <li>Placeholder text</li>
+                            <li>Placeholder text</li>
+                            <li>Placeholder text</li>
+                            <li>Placeholder text</li>
+                        </ul>
+                    </div>
+                    <button class="editButton" onclick="editPlan('VIPPlan')">Edit</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="discountsAndPromotions" class="sub-tab-content">
+            <i class="fa-solid fa-tag"></i> Discount and Promotions
+        </div>
+    </div>
+
+    <div id="giftcards" class="tab-content"> <!-- Creating a container for gift cards -->
+        <!-- Gift Cards content goes here -->
+    </div>
+
+    <footer class="footer">Created by Intrastack Solutions</footer>
+    <script src="script.js"></script>
+</body>
+</html>
+

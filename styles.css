@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #3e3862;
+    padding: 10px 0;
+    text-align: center;
+}
+.navbar a {
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.navbar a:hover {
+    color: #BCA2e7;
+}
+.navbar a.active {
+    border-bottom: 3px solid #BCA2e7; /* Add a bar under the active tab */
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.logo-container .fa-cash-register {
+    margin-right: 10px;
+}
+
+.tab-content {
+    display: none;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.mini-navbar-memberships {
+    background-color: #f0f0f0;
+    flex-direction: column;
+    text-align: left;
+    font-size: 30px;
+    padding: 20px 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.096);
+}
+.mini-navbar-memberships .memberships-heading {
+    font-weight: bold;
+    color: #51395b;
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: flex; 
+    align-items: center; 
+}
+.sub-tab-content .fa-users, .fa-plus, .fa-clipboard, .fa-tag {
+    margin-right: 10px;
+}
+.mini-navbar-memberships .memberships-navbar-button {
+    color: #51395b;
+    padding: 5px 30px;
+    text-decoration: none;
+    margin: 5px 0;
+    font-size: 18px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.mini-navbar-memberships .memberships-navbar-button.active {
+    border-bottom: 3px solid #BCA2e7; /* Add a bar under the active button */
+}
+.mini-navbar-memberships .memberships-navbar-button:hover {
+    color: #BCA2e7;
+}
+.mini-navbar-memberships .links {
+    display: flex;
+    flex-grow: 1;
+    margin-top: 10px;
+}
+
+.sub-tab-content {
+    display: none;
+    padding: 20px;
+} 
+
+.footer {
+    background-color: #3e3862;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Form styles */
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+.form-container form label, 
+.form-container form input, 
+.form-container form select, 
+.form-container form button {
+    margin: 5px 0;
+}
+
+#membersCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.member-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(33.333% - 40px);
+    box-sizing: border-box;
+    transition: transform 0.2s;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+}
+
+.member-info p {
+    margin: 8px 0;
+}
+
+.expandable {
+    cursor: pointer;
+    color: #007bff;
+}
+
+.expandable:hover {
+    text-decoration: underline;
+}
+
+.member-details {
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.formCard {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+/* Styles for the input fields */
+#name,
+#dateOfBirth,
+#email,
+#phone,
+#address,
+#membershipType,
+#payment {
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+/* Styling for the labels */
+.formCard label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Styling for the submit button */
+.formCard button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.formCard button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the container holding the plan cards */
+.plan-cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Styling for plan cards */
+.planCard {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    flex-shrink: 0;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1; /* Ensure the card content is above the pseudo-element */
+}
+
+/* Add hover effect */
+.planCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for plan cards */
+.basicPlanCard, .premiumPlanCard, .VIPPlanCard {
+    background-color: white;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure the card content is above the pseudo-element */
+}
+
+/* Header section with price */
+.planHeaderBasic, .planHeaderPremium, .planHeaderVIP {
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    z-index: 2; /* Ensure the header is above the pseudo-element */
+}
+.planHeaderBasic {
+    background-color: #8D769A;
+}
+.planHeaderPremium {
+    background-color: #46315C;
+}
+.planHeaderVIP {
+    background-color: #10091D;
+}
+.price {
+    font-size: 36px;
+    margin: 0;
+}
+.period {
+    font-size: 14px;
+    margin: 0;
+}
+.planContent {
+    padding: 20px;
+    z-index: 2; /* Ensure the content is above the pseudo-element */
+}
+.planContent h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+.planContent .benefits {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    color: #666;
+}
+.planContent .benefits li {
+    margin: 10px 0;
+}
+.editButton {
+    background-color: #565264;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 0 0 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.3s ease;
+    z-index: 2; /* Ensure the button is above the pseudo-element */
+}
+.editButton:hover {
+    background-color: #464257;
+}
+
+/* Add animation effect */
+.planCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #3e3862;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(1.05);
+    z-index: 0; /* Ensure the pseudo-element is below the card content */
+}
+
+.planCard:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
